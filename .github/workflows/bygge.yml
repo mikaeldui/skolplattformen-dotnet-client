@@ -2,6 +2,7 @@ name: Bygge av källkoden
 
 on:
   push:
+    branches: [ '**' ]
     paths: 
       - src/**
   pull_request:
