@@ -56,7 +56,7 @@ namespace Skolplattformen
                     case "ERROR!":
                         return false;
                     default:
-                        cancellationToken.ThrowIfCancellationRequested();
+                        await Task.Delay(1000, cancellationToken);
                         break;
                 }
             }
