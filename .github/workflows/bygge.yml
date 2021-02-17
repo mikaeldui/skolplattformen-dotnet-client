@@ -1,0 +1,26 @@
+name: Bygge av källkoden
+
+on:
+  push:
+    paths: 
+      - src/**
+  pull_request:
+    branches: [ huvudgrenen ]
+    paths: 
+      - src/**
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Ställ in .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Återställ beroenden
+      run: dotnet restore
+    - name: Bygg
+      run: dotnet build --no-restore
