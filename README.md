@@ -22,7 +22,7 @@ using (var client = new SkolplattformenVardnadshavareClient())
     var user = await client.GetUserAsync();
 
     // Get children
-    var chidlren = await client.GetChildrenAsync();
+    var children = await client.GetChildrenAsync();
 
     // Get the news for the first child
     var news = await client.GetNewsAsync(children[0]);
