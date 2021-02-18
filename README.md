@@ -29,3 +29,7 @@ using (var client = new SkolplattformenVardnadshavareClient())
     var news = await client.GetNewsAsync(children[0]);
 }
 ```
+
+# Related
+
+If you want a JavaScript version, check out the project [kolplattformen/embedded-api](https://github.com/kolplattformen/embedded-api).
