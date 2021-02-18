@@ -5,3 +5,7 @@
 An unofficial .NET client for Skolplattformen.
 
 Currently under development, nothing has been tested yet.
+
+You can install the latest prerelease using the following command:
+
+    dotnet add package MikaelDui.Skolplattformen.Client --prerelease
