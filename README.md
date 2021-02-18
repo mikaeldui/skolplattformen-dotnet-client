@@ -16,7 +16,7 @@ You can install the [NuGet package](https://www.nuget.org/packages/MikaelDui.Sko
 ```C#
 using (var client = new SkolplattformenVardnadshavareClient())
 {
-    // Log in with BankID
+    // Login with BankID
     await client.TryAuthenticateAsync("121212-1212");
 
     // Get the current user
