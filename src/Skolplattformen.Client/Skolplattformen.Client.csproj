@@ -13,11 +13,10 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>Skolplattofrmen, Stockholm, Sweden, Education, School</PackageTags>
     <PackageReleaseNotes>This library hasn't even been test run yet.</PackageReleaseNotes>
-    <Version>1.0.0-alpha.1</Version>
+    <Version>1.0.0-alpha.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ActiveLogin.Authentication.BankId.Api" Version="4.0.0" />
     <PackageReference Include="ActiveLogin.Identity.Swedish" Version="2.0.2" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
     <PackageReference Include="System.Text.Json" Version="5.0.1" />

@@ -30,9 +30,16 @@ namespace Skolplattformen
 
         public event EventHandler<SkolplattformenBankidStatus> BankidStatusChanged;
 
-        /// <summary>
-        /// You can subscribe to <see cref="BankidStatusChanged"/> for updates on the progress.
-        /// </summary>
+        /// <summary> You can subscribe to <see cref="BankidStatusChanged"/> for updates on the progress. </summary>
+        public async Task<bool> TryAuthenticateAsync(string identityNumber) => await TryAuthenticateAsync(identityNumber, CancellationToken.None);
+
+        /// <summary> You can subscribe to <see cref="BankidStatusChanged"/> for updates on the progress. </summary>
+        public async Task<bool> TryAuthenticateAsync(string identityNumber, CancellationToken cancellationToken) => await TryAuthenticateAsync(SwedishPersonalIdentityNumber.Parse(identityNumber), cancellationToken);
+
+        /// <summary> You can subscribe to <see cref="BankidStatusChanged"/> for updates on the progress. </summary>
+        public async Task<bool> TryAuthenticateAsync(SwedishPersonalIdentityNumber identityNumber) => await TryAuthenticateAsync(identityNumber, CancellationToken.None);
+
+        /// <summary> You can subscribe to <see cref="BankidStatusChanged"/> for updates on the progress. </summary>
         public async Task<bool> TryAuthenticateAsync(SwedishPersonalIdentityNumber identityNumber, CancellationToken cancellationToken)
         {
             var ticket = await _httpClient.GetFromJsonAsync<SkolplattformenBankIdAuthTicket>(Routes.Login(identityNumber));
