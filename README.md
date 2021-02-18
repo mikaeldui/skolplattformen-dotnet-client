@@ -1,8 +1,8 @@
 # Skolplattformen .NET Client
-
+](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
 ![Bygge av källkoden](https://github.com/mikaeldui/skolplattformen-dotnet-client/workflows/Bygge%20av%20k%C3%A4llkoden/badge.svg) [![NuGet version (MikaelDui.Skolplattformen.Client)](https://img.shields.io/nuget/v/MikaelDui.Skolplattformen.Client.svg?style=flat-square)](https://www.nuget.org/packages/MikaelDui.Skolplattformen.Client/) 
 
-An unofficial .NET client for Skolplattformen. You could use it to create your own Skolplattformen app using [Xamarin](https://dotnet.microsoft.com/apps/xamarin)!
+An unofficial .NET client for Skolplattformen. You could use it to create your own Skolplattformen app using e.g. [Xamarin](https://dotnet.microsoft.com/apps/xamarin) or [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)!
 
 Currently under development, nothing has been tested yet.
 
