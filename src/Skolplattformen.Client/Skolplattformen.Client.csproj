@@ -4,6 +4,16 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>Skolplattformen</RootNamespace>
     <PackageId>MikaelDui.Skolplattformen.Client</PackageId>
+    <Authors>Mikael Dúi Bolinder</Authors>
+    <Product>Skolplattformen .NET Client</Product>
+    <Description>An unofficial .NET client for Skolplattformen.</Description>
+    <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/mikaeldui/skolplattformen-dotnet-client</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mikaeldui/skolplattformen-dotnet-client</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Skolplattofrmen, Stockholm, Sweden, Education, School</PackageTags>
+    <PackageReleaseNotes>This library hasn't even been test run yet.</PackageReleaseNotes>
+    <Version>1.0.0-alpha.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
