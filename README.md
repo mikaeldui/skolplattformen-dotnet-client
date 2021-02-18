@@ -1,8 +1,7 @@
 # Skolplattformen .NET Client
+![Bygge av källkoden](https://github.com/mikaeldui/skolplattformen-dotnet-client/workflows/Bygge%20av%20k%C3%A4llkoden/badge.svg) [![NuGet version (MikaelDui.Skolplattformen.Client)](https://img.shields.io/nuget/v/MikaelDui.Skolplattformen.Client.svg?style=flat-square)](https://www.nuget.org/packages/MikaelDui.Skolplattformen.Client/) 
 
-![Bygge av källkoden](https://github.com/mikaeldui/skolplattformen-dotnet-client/workflows/Bygge%20av%20k%C3%A4llkoden/badge.svg)
-
-An unofficial .NET client for Skolplattformen.
+An unofficial .NET client for Skolplattformen. You could use it to create your own Skolplattformen app with for example [Xamarin](https://dotnet.microsoft.com/apps/xamarin) and [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)!
 
 Currently under development, nothing has been tested yet.
 
@@ -22,7 +21,7 @@ using (var client = new SkolplattformenVardnadshavareClient())
     var user = await client.GetUserAsync();
 
     // Get children
-    var chidlren = await client.GetChildrenAsync();
+    var children = await client.GetChildrenAsync();
 
     // Get the news for the first child
     var news = await client.GetNewsAsync(children[0]);
