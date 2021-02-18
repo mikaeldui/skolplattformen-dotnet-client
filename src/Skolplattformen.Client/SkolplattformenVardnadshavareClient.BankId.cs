@@ -42,13 +42,13 @@ namespace Skolplattformen
         /// <summary> You can subscribe to <see cref="BankidStatusChanged"/> for updates on the progress. </summary>
         public async Task<bool> TryAuthenticateAsync(SwedishPersonalIdentityNumber identityNumber, CancellationToken cancellationToken)
         {
-            var ticket = await _httpClient.GetFromJsonAsync<SkolplattformenBankIdAuthTicket>(Routes.Login(identityNumber));
+            var ticket = await _httpClient.GetFromJsonAsync<SkolplattformenBankIdAuthTicket>(Routes.Login(identityNumber.To12DigitString()));
 
             while(true)
             {
                 var status = await _httpClient.GetStringAsync(Routes.LoginStatus(ticket.Order), cancellationToken);
 
-                if (Enum.TryParse(status.Remove('!'), true, out SkolplattformenBankidStatus bankidStatus))
+                if (Enum.TryParse(status.Replace("!", "").Replace("_", ""), true, out SkolplattformenBankidStatus bankidStatus))
                     BankidStatus = bankidStatus;
                 else
                     BankidStatus = SkolplattformenBankidStatus.Unknown;
