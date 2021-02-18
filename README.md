@@ -30,6 +30,6 @@ using (var client = new SkolplattformenVardnadshavareClient())
 }
 ```
 
-# Related
+## Related
 
 If you want a JavaScript version, check out the project [kolplattformen/embedded-api](https://github.com/kolplattformen/embedded-api).
