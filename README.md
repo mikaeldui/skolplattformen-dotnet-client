@@ -3,11 +3,13 @@
 
 An unofficial .NET client for Skolplattformen. You could use it to create your own Skolplattformen app with for example [Xamarin](https://dotnet.microsoft.com/apps/xamarin) and [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)!
 
-Currently under development, nothing has been tested yet.
+Currently under development, everything hasn't been tested yet. Please [create an issue](https://github.com/mikaeldui/skolplattformen-dotnet-client/issues) if you encounter any problems.
 
-You can install the latest prerelease using the following command:
+## Installation 
 
-    dotnet add package MikaelDui.Skolplattformen.Client --prerelease
+You can install the [NuGet package](https://www.nuget.org/packages/MikaelDui.Skolplattformen.Client/) using the following command:
+
+    dotnet add package MikaelDui.Skolplattformen.Client
 
 ## Example
 
