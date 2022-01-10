@@ -1,56 +1,21 @@
 name: Bygge av källkoden
 
 on:
-  push:
-    branches: [ huvudgrenen ]    
+  push:  
     paths:
       - 'src/**'
       - '.github/**'
   pull_request:
-    branches: [ huvudgrenen ]
     paths:     
       - 'src/**'
       - '.github/**'
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.x
-        
-    - name: Create tag dry run
-      id: tag
-      uses: mikaeldui/actions/create-tag@main
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        dry_run: true
-        
-    - name: SemVer suffix
-      id: semver
-      uses: mikaeldui/actions/nupkg/semver-suffix@main
-      
-    - name: Restore dependencies
-      run: dotnet restore
-      
-    - name: Build
-      run: dotnet build --no-restore --configuration Release /p:Version=${{ steps.tag.outputs.version }}${{ steps.semver.outputs.suffix }}
-      
-    - name: Test
-      run: dotnet test --no-build --configuration Release --verbosity normal
-
-      # Pack & Publish
-      
-    - name: 'Pack & Publish Artifact'
-      uses: mikaeldui/actions/nupkg/dotnet/pack-and-publish-artifact@main
-      with:
-        version: ${{ steps.tag.outputs.version }}${{ steps.semver.outputs.suffix }}
-        project_directory: ./src/Skolplattformen.Client
+    name: "Build & Pack"
+    uses: mikaeldui/actions/.github/workflows/dotnet-build-and-pack.yml@main
+    with:
+      project_directory: ./src/Skolplattformen.Client
         
   nuget-org:
     name: 'NuGet.org'
