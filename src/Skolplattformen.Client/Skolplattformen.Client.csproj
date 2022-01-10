@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0;net6.0</TargetFrameworks>
     <RootNamespace>Skolplattformen</RootNamespace>
     <PackageId>MikaelDui.Skolplattformen.Client</PackageId>
     <Authors>Mikael Dúi Bolinder</Authors>
@@ -13,13 +13,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>Skolplattofrmen, Stockholm, Sweden, Education, School</PackageTags>
     <PackageReleaseNotes>This library hasn't even been test run yet.</PackageReleaseNotes>
-    <Version>1.0.0-alpha.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ActiveLogin.Identity.Swedish" Version="2.0.2" />
-    <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
-    <PackageReference Include="System.Text.Json" Version="5.0.1" />
+    <PackageReference Include="ActiveLogin.Identity.Swedish" Version="*" />
+    <PackageReference Include="System.Net.Http.Json" Version="*" />
+    <PackageReference Include="System.Text.Json" Version="*" />
   </ItemGroup>
 
 </Project>
