@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Stockholm-vapen-1200x1471.png">
+    <None Include="Stockholm-vapen-1200x1471.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
