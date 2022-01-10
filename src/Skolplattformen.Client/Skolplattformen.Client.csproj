@@ -14,12 +14,28 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>Skolplattofrmen, Stockholm, Sweden, Education, School</PackageTags>
     <PackageReleaseNotes>This library hasn't even been test run yet.</PackageReleaseNotes>
+    <PackageIcon>Stockholm-vapen-1200x1471.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ActiveLogin.Identity.Swedish" Version="*" />
     <PackageReference Include="System.Net.Http.Json" Version="*" />
     <PackageReference Include="System.Text.Json" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Stockholm-vapen-1200x1471.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

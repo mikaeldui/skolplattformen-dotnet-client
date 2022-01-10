@@ -6,7 +6,7 @@ namespace Skolplattformen
 {
     public class SkolplattformenUser
     {
-        [JsonPropertyName("socialSecurityNumber"), JsonConverter(typeof(SwedishPersonalIdentityNumberConverter))]
+        [JsonPropertyName("socialSecurityNumber"), JsonSwedishPersonalIdentityNumber]
         public SwedishPersonalIdentityNumber PersonalNumber { get; set; }
         public bool? IsAuthenticated { get; set; }
         [JsonPropertyName("userFirstName")]
