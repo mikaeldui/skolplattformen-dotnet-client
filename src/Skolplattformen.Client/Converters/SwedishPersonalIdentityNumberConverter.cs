@@ -18,7 +18,7 @@ namespace Skolplattformen.Converters
 
         public override void Write(Utf8JsonWriter writer, SwedishPersonalIdentityNumber value, JsonSerializerOptions options)
         {
-            return value.To10DigitString()
+            return value.To10DigitString();
         }
     }
 }
