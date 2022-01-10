@@ -9,7 +9,7 @@ Currently under development, everything hasn't been tested yet. Please [create a
 
 You can install the [NuGet package](https://www.nuget.org/packages/MikaelDui.Skolplattformen.Client/) using the following command:
 
-    dotnet add package MikaelDui.Skolplattformen.Client
+    dotnet add package MikaelDui.Skolplattformen.Client --version *
 
 ## Example
 
