@@ -14,7 +14,7 @@ You can install the [NuGet package](https://www.nuget.org/packages/MikaelDui.Sko
 ## Example
 
 ```C#
-using SkolplattformenVardnadshavareClient client = new SkolplattformenVardnadshavareClient();
+using SkolplattformenVardnadshavareClient client = new();
 
 // Login with BankID
 await client.TryAuthenticateAsync("121212-1212");
