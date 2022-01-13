@@ -19,7 +19,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\README.md">
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\Stockholm-vapen-1200x1471.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
@@ -32,13 +36,6 @@
 	<PackageReference Include="System.Net.Http.Json" Version="*" Condition="'$(TargetFramework)' == 'netstandard2.1'" />
 	<PackageReference Include="System.Text.Json" Version="*" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
 	<PackageReference Include="System.Text.Json" Version="*" Condition="'$(TargetFramework)' == 'netstandard2.1'" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Stockholm-vapen-1200x1471.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
   </ItemGroup>
 
 </Project>

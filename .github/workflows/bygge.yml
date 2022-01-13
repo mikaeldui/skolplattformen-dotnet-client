@@ -3,23 +3,20 @@ name: Bygge av källkoden
 on:
   push:  
     paths:
-      - 'src/**'
+      - 'Skolplattformen.Client**'
       - '.github/**'
   pull_request:
     paths:     
-      - 'src/**'
+      - 'Skolplattformen.Client**'
       - '.github/**'
 
 jobs:
   build:
-    name: "Build & Pack"
+    name: "Bygg & paketera"
     uses: mikaeldui/actions/.github/workflows/dotnet-build-and-pack.yml@main
-    with:
-      project_directory: ./src/Skolplattformen.Client
         
   nuget-org:
     name: 'NuGet.org'
-    if: ${{ (github.ref == 'refs/heads/huvudgrenen' && github.event_name == 'push') || github.event_name == 'pull_request' || (startsWith(github.ref, 'refs/heads/features') && github.event_name == 'push') }}
     uses: mikaeldui/actions/.github/workflows/nuget.org-deploy.yml@main
     needs: build
     secrets:
@@ -27,13 +24,11 @@ jobs:
 
   github-packages:
     name: 'GitHub Packages'
-    if: ${{ (github.ref == 'refs/heads/huvudgrenen' && github.event_name == 'push') || github.event_name == 'pull_request' || (startsWith(github.ref, 'refs/heads/features') && github.event_name == 'push') }}
     uses: mikaeldui/actions/.github/workflows/github-packages-deploy.yml@main
     needs: build
 
   github-release:
     name: 'GitHub Release'
-    if: ${{ github.ref == 'refs/heads/huvudgrenen' && github.event_name == 'push' }}
     uses: mikaeldui/actions/.github/workflows/github-release.yml@main
     needs: [nuget-org, github-packages]
     with:
