@@ -39,29 +39,29 @@ namespace Skolplattformen
         public async Task<SkolplattformenUser> GetUserAsync() =>
             await _httpClient.GetFromJsonAsync<SkolplattformenUser>(Routes.User);
 
-        public async Task<SkolplattformenChild[]> GetChildrenAsync() =>
-            await _httpClient.GetEtjanstObjectAsync<SkolplattformenChild[]>(Routes.Children);
+        public async Task<SkolplattformenCollection<SkolplattformenChild>> GetChildrenAsync() =>
+            await _httpClient.GetEtjanstObjectAsync<SkolplattformenCollection<SkolplattformenChild>>(Routes.Children);
 
-        public async Task<SkolplattformenCalendarItem[]> GetCalendarAsync(SkolplattformenChild child) =>
-            await _httpClient.GetEtjanstObjectAsync<SkolplattformenCalendarItem[]>(Routes.Calendar(child.Id));
+        public async Task<SkolplattformenCollection<SkolplattformenCalendarItem>> GetCalendarAsync(SkolplattformenChild child) =>
+            await _httpClient.GetEtjanstObjectAsync<SkolplattformenCollection<SkolplattformenCalendarItem>>(Routes.Calendar(child.Id));
 
-        public async Task<SkolplattformenClassmate[]> GetClassmatesAsync(SkolplattformenChild child) =>
-            await _httpClient.GetEtjanstObjectAsync<SkolplattformenClassmate[]>(Routes.Classmates(child.Id));
+        public async Task<SkolplattformenCollection<SkolplattformenClassmate>> GetClassmatesAsync(SkolplattformenChild child) =>
+            await _httpClient.GetEtjanstObjectAsync<SkolplattformenCollection<SkolplattformenClassmate>>(Routes.Classmates(child.Id));
 
-        public async Task<SkolplattformenScheduleItem[]> GetScheduleAsync(SkolplattformenChild child, DateTime from, DateTime to) =>
-            await _httpClient.GetEtjanstObjectAsync<SkolplattformenScheduleItem[]>(Routes.Schedule(child.Id, from, to));
+        public async Task<SkolplattformenCollection<SkolplattformenScheduleItem>> GetScheduleAsync(SkolplattformenChild child, DateTime from, DateTime to) =>
+            await _httpClient.GetEtjanstObjectAsync<SkolplattformenCollection<SkolplattformenScheduleItem>>(Routes.Schedule(child.Id, from, to));
 
-        public async Task<SkolplattformenNewsItem[]> GetNewsAsync(SkolplattformenChild child) =>
+        public async Task<SkolplattformenCollection<SkolplattformenNewsItem>> GetNewsAsync(SkolplattformenChild child) =>
             (await _httpClient.GetEtjanstObjectAsync<SkolplattformenNewsItem.Container>(Routes.News(child.Id))).NewsItems;
 
         public async Task<SkolplattformenNewsItem> GetNewsItemDetailsAsync(SkolplattformenChild child, SkolplattformenNewsItem newsItem) =>
             (await _httpClient.GetEtjanstObjectAsync<SkolplattformenNewsItem.Container>(Routes.NewsDetails(child.Id, newsItem.Id))).CurrentNewsItem;
 
-        public async Task<SkolplattformenMenuItem[]> GetMenuAsync(SkolplattformenChild child) =>
-            await _httpClient.GetEtjanstObjectAsync<SkolplattformenMenuItem[]>(Routes.Menu(child.Id));
+        public async Task<SkolplattformenCollection<SkolplattformenMenuItem>> GetMenuAsync(SkolplattformenChild child) =>
+            await _httpClient.GetEtjanstObjectAsync<SkolplattformenCollection<SkolplattformenMenuItem>>(Routes.Menu(child.Id));
 
-        public async Task<SkolplattformenNotification[]> GetNotificationsAsync(SkolplattformenChild child) =>
-            await _httpClient.GetEtjanstObjectAsync<SkolplattformenNotification[]>(Routes.Notifications(child.Id));
+        public async Task<SkolplattformenCollection<SkolplattformenNotification>> GetNotificationsAsync(SkolplattformenChild child) =>
+            await _httpClient.GetEtjanstObjectAsync< SkolplattformenCollection<SkolplattformenNotification >> (Routes.Notifications(child.Id));
 
         public void Dispose() => _httpClient.Dispose();
     }

@@ -32,7 +32,7 @@ namespace Skolplattformen
 
         internal class Container
         {
-            public SkolplattformenNewsItem[] NewsItems { get; set; }
+            public SkolplattformenCollection<SkolplattformenNewsItem> NewsItems { get; set; }
 
             public SkolplattformenNewsItem CurrentNewsItem { get; set; }
         }

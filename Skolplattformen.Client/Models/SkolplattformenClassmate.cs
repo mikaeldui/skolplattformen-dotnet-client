@@ -6,6 +6,6 @@
         public string? ClassName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public SkolplattformenGuardian[] Guardians { get; set; }
+        public SkolplattformenCollection<SkolplattformenGuardian> Guardians { get; set; }
     }
 }
